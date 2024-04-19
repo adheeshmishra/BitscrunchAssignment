@@ -40,6 +40,7 @@ const metricSocketRouter = (wsServer) => {
 
     // WebSocket message event listener
     ws.on("message", function message(data, isBinary) {
+      // Broadcast the message to all clients except the sender
       wsServer.clients.forEach(function each(client) {
         if (client !== ws && client.readyState === WebSocket.OPEN) {
           client.send(data, { binary: isBinary });
