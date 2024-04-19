@@ -1,3 +1,4 @@
+//this file is used to handle the websocket requests for the routing of socket endpoint
 import {
   handleWebSocketRequest,
   handleWebSocketMetricsRequest,

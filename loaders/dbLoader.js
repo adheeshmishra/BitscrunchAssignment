@@ -1,3 +1,4 @@
+//this module is responsible for connecting to the database and starting the server
 import mongoose from "mongoose";
 const mongourl = process.env.MONGO_URI;
 const PORT = process.env.PORT || 3000;

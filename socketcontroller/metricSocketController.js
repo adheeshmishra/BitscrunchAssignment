@@ -1,6 +1,6 @@
+//this controller handles the request for socket endpoint
 import metricModel from "../models/metricModel.js";
 
-//this controller handles the websocket request for metrics endpoint
 export const handleWebSocketMetricsRequest = async (ws, request) => {
   //extract chain_id, address and metric from the request
   const { chain_id, address, metric } = request.params;

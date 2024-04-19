@@ -1,3 +1,4 @@
+//this file is responsible for setting up the express server
 import cors from "cors";
 import express from "express";
 import helmet from "helmet";

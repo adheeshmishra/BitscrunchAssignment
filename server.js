@@ -14,8 +14,10 @@ const wsServer = new WebSocketServer({ server: server });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Default route
 app.use(notFoundMiddleware);
+// WebSocket Routes
 metricSocketRouter(wsServer);
 
-// Initialize the app services, like the Express App instance, Database connection etc, Starting the SERVER.
+// Initialize the app services, like the Express App instance, Database connection, Starting the SERVER etc.
 await loaders(app, server);

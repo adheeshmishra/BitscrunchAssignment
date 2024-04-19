@@ -1,3 +1,4 @@
+//this module is the entry point for all the loaders, it initializes the different services like express, database etc.
 import dbLoader from "./dbLoader.js";
 import expressLoader from "./expressLoader.js";
 
