@@ -17,7 +17,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use(notFoundMiddleware);
 metricSocketRouter(wsServer);
 
-await loaders(app,server);
-
-
-
+// Initialize the app services, like the Express App instance, Database connection etc, Starting the SERVER.
+await loaders(app, server);

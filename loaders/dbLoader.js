@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3000;
 
 export default async (server) => {
   try {
+    //connecting to mongodb and then starting the server
     mongoose
       .connect(mongourl, {
         dbName: "bitscrunch",
