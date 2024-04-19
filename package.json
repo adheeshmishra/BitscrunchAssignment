@@ -1,0 +1,26 @@
+{
+  "name": "bitscrunchassignment",
+  "version": "1.0.0",
+  "description": "assignment",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "adheeshmishra",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0",
+    "helmet": "^7.1.0",
+    "http-status-codes": "^2.3.0",
+    "mongoose": "^7.4.1",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.7.5",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

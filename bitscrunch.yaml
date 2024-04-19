@@ -1,0 +1,65 @@
+asyncapi: 3.0.0
+info:
+  title: WebSocket API Documentation
+  version: 1.0.0
+  description: Documentation for the WebSocket API endpoints.
+servers:
+  localhost:
+    url: ws://localhost:3004
+channels:
+  metrics:
+    parameters:
+      - name: chain_id
+        description: The ID of the chain.
+        schema:
+          type: string
+      - name: address
+        description: The address to fetch metrics for.
+        schema:
+          type: string
+      - name: metric
+        description: The specific metric to retrieve.
+        schema:
+          type: string
+    subscribe:
+      summary: Subscribe to metrics updates.
+      operationId: subscribeToMetrics
+      message:
+        $ref: "#/components/messages/MetricsMessage"
+  data:
+    parameters:
+      - name: chain_id
+        description: The ID of the chain.
+        schema:
+          type: string
+      - name: address
+        description: The address to fetch data for.
+        schema:
+          type: string
+    subscribe:
+      summary: Subscribe to data updates.
+      operationId: subscribeToData
+      message:
+        $ref: "#/components/messages/DataMessage"
+components:
+  messages:
+    MetricsMessage:
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          metric:
+            type: string
+          assets:
+            type: number
+    DataMessage:
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          name:
+            type: string
+          image_url:
+            type: string
+          description:
+            type: string
