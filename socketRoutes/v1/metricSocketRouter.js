@@ -1,7 +1,7 @@
 import {
   handleWebSocketRequest,
   handleWebSocketMetricsRequest,
-} from "../../socketcontroller/metricSocketController.js";
+} from "../../socketController/metricSocketController.js";
 import WebSocket from "ws";
 const metricSocketRouter = (wsServer) => {
   wsServer.on("connection", (ws, request) => {

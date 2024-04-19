@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 const mongourl = process.env.MONGO_URI;
+const PORT = process.env.PORT || 3000;
 
-export default async () => {
+export default async (server) => {
   try {
     mongoose
       .connect(mongourl, {
@@ -11,7 +12,11 @@ export default async () => {
       })
       .then(() => {
         console.log("Connected to MongoDB");
+        server.listen(PORT, () => {
+          console.log(`Server running on port ${PORT}`);
+        });
       })
+
       .catch((error) => {
         console.error("Error connecting to MongoDB:", error.message);
       });
@@ -20,5 +25,3 @@ export default async () => {
     throw new Error(`unable to connect to database:  ${err.message}`);
   }
 };
-
-
