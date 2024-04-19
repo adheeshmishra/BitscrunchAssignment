@@ -2,7 +2,7 @@ import {
   handleWebSocketRequest,
   handleWebSocketMetricsRequest,
 } from "../../socketcontroller/metricSocketController.js";
-
+import WebSocket from "ws";
 const metricSocketRouter = (wsServer) => {
   wsServer.on("connection", (ws, request) => {
     // url parts is used to segregate the url into parts to further extract the chain_id, address and endpoint
